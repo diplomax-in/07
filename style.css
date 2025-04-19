@@ -291,7 +291,7 @@ footer {
     text-align: left;
 }
 .footer-container {
-    align-items: flex-start
+    align-items: flex-start;
     display: flex;
     flex-direction: column;        
  
