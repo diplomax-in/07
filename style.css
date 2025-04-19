@@ -289,7 +289,7 @@ footer {
     padding: 25px;
     text-align: left;
 }
-.footer-container {
+.footer-top {
     align-items: flex-start;
     display: flex;
     flex-direction: column;        
@@ -313,6 +313,17 @@ footer {
 
 }
 .footer-bottom {
-    margin-top: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
 }
 
