@@ -290,7 +290,7 @@ footer {
     padding: 25px;
     text-align: left;
 }
-.footer-container {
+.footer-containeer {
     align-items: flex-start;
     display: flex;
     flex-direction: column;        
