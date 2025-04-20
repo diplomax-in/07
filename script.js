@@ -34,7 +34,7 @@ document.getElementById("subscribe-btn").addEventListener("click", function () {
   } else if (!agreeCheckbox.checked) {
     alert("Please agree to the Privacy Notice.");
   } else {
-    alert("Thank you for subscribing! Diplomax. You'll now receive updates from Polytechnic Walle.");
+    alert("Thank you for subscribing! Diplomax. You'll now receive updates from DIPLOMAX [ JHARKHAND POLYTECHNIC ].");
     emailInput.value = ""; // Reset the input field
     agreeCheckbox.checked = false;
   }
