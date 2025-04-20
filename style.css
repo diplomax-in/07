@@ -21,17 +21,17 @@ header {
 
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border:2px gold;
 }
 
 }
 .logo img {
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
+  height: 45px;
+  width: 45px;
+  margin-right: 5px;
 }
 .site-title {
   color: white;
