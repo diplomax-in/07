@@ -19,11 +19,14 @@ header {
   justify-content: space-between;
 }
 
+
 .logo {
-  width: 40px; 
+  width: 40px;
   height: 40px;
-  font-size: 35px;
-  font-weight: bold;
+  border-radius: 50%;
+  border:2px gold;
+}
+
 }
 .logo img {
   height: 50px;
@@ -281,6 +284,56 @@ h5 {font-size:15px;
   background-color:white;
   width: 25px;
   height: 25px;
+}
+.subscribe-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.subscribe-box p {
+  font-size: 14px;
+  color: #333;
+}
+
+.checkbox-container {
+  display: block;
+  font-size: 13px;
+  margin: 15px 0;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button#subscribe-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button#subscribe-btn:hover {
+  background-color: #3367d6;
 }
 
 footer {
