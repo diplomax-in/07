@@ -11,7 +11,7 @@ body {
 header {
   background-color: #003366;
   color: white;
-  padding: 10px 20px;
+  padding: 3px 10px;
 }
 .header-container {
   display: flex;
@@ -22,7 +22,7 @@ header {
 .xlogo{
     background-color:none;
     border:none;
-    width:140px;
+    width:180px;
     margin-right:1px;
 }
 
