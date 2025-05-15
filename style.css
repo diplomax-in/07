@@ -124,7 +124,7 @@ img{ border-radius:10px;
   background-color: white;
   border: 1px solid #ccc;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   box-shadow: 4px 6px 8px 0px #1e1e1e ;
   transition: all 1.3s ease;
   opacity: 0;
@@ -270,8 +270,9 @@ h5 {font-size:15px;
 
 .social-icons img {
   background-color:white;
-  width: 25px;
-  height: 25px;
+  borderw:2px white;
+  width: 30px;
+  height: 30px;
 }
 .subscribe-box {
   background: white;
