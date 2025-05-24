@@ -1,3 +1,16 @@
+function sharePage() {
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        text: 'Check out this page!',
+        url: window.location.href
+      })
+      .then(() => console.log('Page shared successfully!'))
+      .catch(error => console.log('Error sharing:', error));
+    } else {
+      alert('Sharing not supported on this browser.');
+    }
+  }
 
 function toggleSection(id, btn) {
   const sections = document.getElementsByClassName("section");
