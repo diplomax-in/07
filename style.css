@@ -326,71 +326,98 @@ button#subscribe-btn {
 button#subscribe-btn:hover {
   background-color: #3367d6;
 }
+/* Footer Styles */
 .footer {
   background-color: #003366;
-  color: #fff;
+  color: white;
   padding: 30px 20px;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer h4 {
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
 .footer-container {
   max-width: 1000px;
-  margin: auto;
-}
-
-.footer-title {
-  color:white;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-shadow:2px 2px 2px black;
-}
-
-.footer-tagline {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #ccc;
+  margin: 0 auto;
 }
 
 .footer-links {
-  text-align:left;
   list-style: none;
-  padding: 20px;
-  margin: 0 0 20px;
+  padding: 0;
+  margin-bottom: 25px;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: left;
-  text-gap: 5px;
+  justify-content: center;
+  gap: 0px;
 }
 
-.footer-links a i{
-  padding:5px;
+.footer-links li {
+  margin: 0px 10px;
+}
+
+.footer-links a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
+  color: #fffc6a;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
 }
 
 .social-icons a {
   color: white;
-  font-size: 25px;
-  margin: 0 15px;
-  text-decoration: none;
-  transition: transform 0.3s;
-  text-shadow:2px 2px 2px black;
-  }
-
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: #00bcd4;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
 }
 
+.social-icons a:hover {
+  color: #fffc6a;
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-top: 1px solid #555;
+  padding-top: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ddd;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .footer-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+  }
+
+  .social-icons {
+    gap: 15px;
   }
 }
