@@ -107,7 +107,65 @@ img{ border-radius:10px;
   text-align: center;
   background-color: #e6f0ff;
 }
+.btn {
+  background-color: #007bff;
+  color:white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 20px;
 
+}
+.section {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #e6f0ff;
+  color:black;
+  margin-top: 10px;
+  padding: 15px;
+  border: 2px solid #003366;
+  border-radius: 10px;
+  display: none;
+}
+
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toggle-btn {
+  align-items:center;
+  margin-left: 25%;
+  margin-right: 20%;
+  padding: 10px 20px;
+  background-color: #fffc6a;
+  color: black;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+}
+.toggle-btn:hover {
+  background-color: #a7a7a755;
+}
+
+.toggle-btn.active {
+  background-color: #c5c5c555;
+}
+@media (min-width: 768px) {
+  .section{
+    margin-top: 5%;
+    padding: 30px;
+    border-radius: 16px;
+  }
+}
 .cards {
   display: flex;
   justify-content: space-around;
@@ -185,7 +243,7 @@ table th, table td {
 }
 body
 {
-  .whatsapp-float {
+.whatsapp-float {
   position: fixed;
   bottom: 90px;
   right: 20px;
@@ -312,21 +370,27 @@ input[type="email"] {
   border-radius: 5px;
 }
 
-button#subscribe-btn {
+#subscribe-btn {
   background-color: #4285f4;
   color: white;
   border: none;
+  margin-left:1px;
   padding: 12px;
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
 }
 
-button#subscribe-btn:hover {
+#subscribe-btn:hover {
   background-color: #3367d6;
 }
-
+.holiday-img{
+  background-color:white;
+  width: 340px;
+  height: 450px;
+  border:2px solid #272727;
+}
 /* Footer Styles */
 .footer {
   background-color: #003366;
@@ -414,11 +478,10 @@ button#subscribe-btn:hover {
 /* Responsive */
 @media (max-width: 600px) {
   .footer-links {
-    font-size:1rem;
     flex-direction: column;
     gap: 15px;
   }
-    .social-icons {
+
+  .social-icons {
     gap: 15px;
   }
-}
