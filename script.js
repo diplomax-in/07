@@ -1,3 +1,30 @@
+function toggleSection(id, btn) {
+  const sections = document.getElementsByClassName("section");
+  const buttons = document.getElementsByClassName("toggle-btn");
+
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    const button = buttons[i];
+
+    if (section.id === id) {
+      const isActive = section.classList.contains("active");
+
+      if (isActive) {
+        section.classList.remove("active");
+        btn.classList.remove("active");
+        setTimeout(() => section.style.display = "none", 500);
+      } else {
+        section.style.display = "block";
+        setTimeout(() => section.classList.add("active"), 10);
+        btn.classList.add("active");
+      }
+    } else {
+      section.classList.remove("active");
+      setTimeout(() => section.style.display = "none", 500);
+      button.classList.remove("active");
+    }
+  }
+}
 // Like button functionality
 let likeCount = 0;
 function incrementLike() {
@@ -41,9 +68,20 @@ if (subscribeBtn) {
     } else if (!agreeCheckbox.checked) {
       alert("Please agree to the Privacy Notice.");
     } else {
-      alert("Thank you for subscribing! Diplomax. You'll now receive updates from Polytechnic Walle.");
+      alert("Thank you for subscribing! Diplomax. You'll now receive updates from Diplomax Jharkhand polytechnic.");
       emailInput.value = ""; // Clear input
       agreeCheckbox.checked = false;
     }
   });
 }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const branch = urlParams.get('branch');
+
+  // Hide all sections first
+  document.querySelectorAll('.notes-section').forEach(sec => sec.style.display = 'none');
+
+  // Show the selected branch section
+  if (branch) {
+    document.getElementById(branch).style.display = 'block';
+  }
