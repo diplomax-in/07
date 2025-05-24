@@ -414,19 +414,11 @@ button#subscribe-btn:hover {
 /* Responsive */
 @media (max-width: 600px) {
   .footer-links {
+    font-size:1rem;
     flex-direction: column;
     gap: 15px;
   }
-.footer-bottom {
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-top: 1px solid #555;
-  padding-top: 15px;
-  max-width: 600px;
-  margin: 0 auto;
-  color: #ddd;
-  }
-  .social-icons {
+    .social-icons {
     gap: 15px;
   }
 }
