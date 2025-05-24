@@ -1,3 +1,4 @@
+
 function toggleSection(id, btn) {
   const sections = document.getElementsByClassName("section");
   const buttons = document.getElementsByClassName("toggle-btn");
@@ -85,3 +86,4 @@ if (subscribeBtn) {
   if (branch) {
     document.getElementById(branch).style.display = 'block';
   }
+  
