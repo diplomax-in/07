@@ -391,6 +391,27 @@ input[type="email"] {
   height: 450px;
   border:2px solid #272727;
 }
+.share-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+a {
+  color: currentColor;
+  cursor: pointer;
+  text-decoration: none;
+}
+.share-btn:hover {
+  background-color: #0056b3;
+}
 /* Footer Styles */
 .footer {
   background-color: #003366;
