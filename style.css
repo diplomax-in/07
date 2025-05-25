@@ -251,7 +251,7 @@ body
 {
 .whatsapp-float {
   position: fixed;
-  bottom: 125px;
+  bottom: 115px;
   right: 20px;
   z-index: 999;
 }
@@ -266,7 +266,7 @@ body
 
 .like-float {
   position: fixed;
-  bottom: 80px;
+  bottom: 70px;
   right: 20px;
   background-color: #ff3b3f;
   border-radius: 30px;
@@ -290,7 +290,7 @@ body
 }
 .share-btn {
   position: fixed;
-  bottom: 40px;
+  bottom: 30px;
   right: 20px;
   padding: 10px 20px;
   background-color: #007bff;
