@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: #003366;
+  background-color: #007bff;
   color: white;
   padding: 3px 10px;
 }
@@ -207,7 +207,7 @@ img{ border-radius:10px;
   display: block;
   margin: 15px auto;
   padding: 5px 90px;
-  background-color: #95e0ff;
+  background-color: #007bff;
   color:black ;
   border: 2px solid black;
   border-radius: 6px;
