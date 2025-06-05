@@ -251,7 +251,7 @@ body
 {
 .whatsapp-float {
   position: fixed;
-  bottom: 150px;
+  bottom: 110px;
   right: 20px;
   z-index: 999;
 }
@@ -266,7 +266,7 @@ body
 
 .like-float {
   position: fixed;
-  bottom: 98px;
+  bottom: 48px;
   right: 20px;
   background-color: #ff3b3f;
   border-radius: 30px;
@@ -280,7 +280,7 @@ body
 .like-float img {
   width: 54px;
   height: 24px;
-  margin-right: 8px;
+  margin-left: 8px;
 }
 
 #like-count {
