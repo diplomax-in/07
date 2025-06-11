@@ -291,7 +291,7 @@ body
 .share-btn {
   position: fixed;
   bottom: 28px;
-  left: 20px;
+  right: 20px;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
