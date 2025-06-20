@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIPLOMAX//Diploma Engineering Career Roadmaps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:#003366;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 3px 10px;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}   
+.xlogo{
+    background-color:none;
+    border:none;
+    width:180px;
+    margin-right:1px;
+}
+
+.menu-toggle {
+  background-color:#003366;
+  display:flex;
+  font-weight: ;
+  font-size: 24px;
+  color: white;
+}
+nav ul {
+  list-style: none;
+  background-color: #003366;
+  flex-direction: column;  
+  display: none;
+  padding: 10px 0;
+}
+
+nav ul.active {
+  display: flex;
+}
+
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: #003366;
+}
+
+/* Desktop view improvements */
+@media (min-width: 769px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    display: none; /* Still hidden unless toggled */
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+.menu-container {
+  position: relative;
+  padding: 10px;
+}
+
+img{ border-radius:10px;
+     border:1px solid black;
+     position:center;
+
+
+}
+.bar {
+  position:fixed;
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 0;
+}
+
+
+main {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color:#f0f4f8;
+}
+h1 {
+  text-align: center;
+  color: #003366;
+    }
+ body
+{
+.whatsapp-float {
+  position: fixed;
+  bottom: 113px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  background-color:white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.like-float {
+  position: fixed;
+  bottom: 68px;
+  right: 20px;
+  background-color: #ff3b3f;
+  border-radius: 30px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.like-float img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+#like-count {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+.share-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+}   
+.branch {
+      
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: white;
+      border-left: 6px solid #0066cc;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      
+    }
+.branch h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    ul {
+      margin: 10px 10px;
+      padding-left: 10px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    
+    
+    
+/* Footer Styles */
+
+.footer {
+  background-color: #003366;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer h4 {
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px;
+}
+
+.footer-links li {
+  margin: 0px 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fffc6a;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fffc6a;
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-top: 1px solid #555;
+  padding-top: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+  </style>
+</head>
+<body>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <header class="header">
+  <div class="header-container">
+    <img src="xlogo..png" alt="Diplomax Logo" class="xlogo" />
+
+
+  <button class="menu-toggle" id="menu-toggle">&#9776;
+  </button>
+  </div>
+  </header>
+
+  <nav class="navbar" id="navbar">
+    <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="jceceb.html"><i class="fas fa-pen"></i> Entrance exam</a></li>
+      
+      <li><a href="semesters.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+      <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
+    </ul>
+
+  </nav>
+</div>
+<main>
+     <section class="cards">
+  <h1>Diploma Engineering Career Roadmaps <br>(All Branches)</h1>
+
+  <div class="branch">
+    <h2>Computer Science Engineering (CSE)</h2>
+    <ul>
+      <li>Semester 1-3: Focus on C, C++, Data Structures</li>
+      <li>Semester 4-5: Learn Web Dev (HTML, CSS, JS), Python, Java</li>
+      <li>Semester 6: Internship + Major Project (Choose trending domain)</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech CSE or Join Job as Junior Dev</li>
+          <li>Learn DSA, Git, GitHub</li>
+          <li>Choose Domain: Web Dev, App Dev, AI, Cyber Security</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Electrical Engineering (EE)</h2>
+    <ul>
+      <li>Semester 1-3: Basic Electricals, Circuit Theory, Machines</li>
+      <li>Semester 4-5: PLC, Microcontrollers, MATLAB, AutoCAD Electrical</li>
+      <li>Semester 6: Internship + Project (Smart Grid, Automation)</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech EE or Join Core Company</li>
+          <li>Learn Embedded Systems, Power Electronics, IoT</li>
+          <li>Get Certified (SCADA, Solar Tech, Electric Vehicle Tech)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Mechanical Engineering (ME)</h2>
+    <ul>
+      <li>Semester 1-3: Engineering Drawing, Thermodynamics, SOM</li>
+      <li>Semester 4-5: CAD, CAM, CNC, SolidWorks</li>
+      <li>Semester 6: Industrial Internship + Project</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech ME or Join Industry as Technician</li>
+          <li>Get certified in Design/Manufacturing Tools</li>
+          <li>Explore domains: Automobile, Robotics, Aerospace</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Civil Engineering</h2>
+    <ul>
+      <li>Semester 1-3: Basics of Surveying, Materials, Structures</li>
+      <li>Semester 4-5: AutoCAD, Revit, STAAD Pro, Estimation</li>
+      <li>Semester 6: Internship on-site + Real project</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech Civil or Join Construction/Design Firms</li>
+          <li>Learn Quantity Surveying, GIS, Project Mgmt</li>
+          <li>Govt Exams: JE, SSC, RRB, PWD</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Electronics & Communication (ECE)</h2>
+    <ul>
+      <li>Semester 1-3: Digital Electronics, Analog Circuits, Signals</li>
+      <li>Semester 4-5: VLSI, Embedded, IoT, PCB Design</li>
+      <li>Semester 6: Project in Communication/Robotics</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech ECE or Join Electronics/IT Firm</li>
+          <li>Courses: MATLAB, Arduino, IoT Dev</li>
+          <li>Domains: Telecom, IoT, Embedded Systems</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Information Technology (IT)</h2>
+    <ul>
+      <li>Semester 1-3: Programming Fundamentals, DBMS, OS</li>
+      <li>Semester 4-5: Learn Full Stack, Android, Cyber Security</li>
+      <li>Semester 6: Portfolio Project + Internship</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech IT or Freelance/Remote Jobs</li>
+          <li>Specialize in DevOps, Cloud, Security, AI</li>
+          <li>Build Resume, Projects, LinkedIn</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Automobile Engineering</h2>
+    <ul>
+      <li>Semester 1-3: Vehicle Mechanics, IC Engines, Chassis Design</li>
+      <li>Semester 4-5: AutoCAD, SolidWorks, Electric Vehicle Concepts</li>
+      <li>Semester 6: Internship at Auto Workshop or Plant</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech Automobile or Join Automotive OEM</li>
+          <li>Focus on EV, Hybrid Vehicle Tech</li>
+          <li>Certification in AUTOSAR, MATLAB, CATIA</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Mining Engineering</h2>
+    <ul>
+      <li>Semester 1-3: Mining Practices, Surveying, Rock Mechanics</li>
+      <li>Semester 4-5: Mine Planning, Blasting, Safety Regulations</li>
+      <li>Semester 6: Field Internship + Project (Mining Plan)</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech Mining or Govt PSU Jobs (Coal India, SCCL)</li>
+          <li>Certifications in Mine Safety, DGMS</li>
+          <li>Higher studies or Management courses in Mining Mgmt</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Chemical Engineering</h2>
+    <ul>
+      <li>Semester 1-3: Chemical Process, Thermodynamics, Material Science</li>
+      <li>Semester 4-5: Reactor Design, Safety, Plant Design</li>
+      <li>Semester 6: Project + Industry Training in Refineries/Plants</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech Chemical or Join Pharma/Fertilizer Industry</li>
+          <li>Certifications: Process Safety, HAZOP</li>
+          <li>Govt Exams: ONGC, IOCL, HPCL, GATE</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>Metallurgical Engineering</h2>
+    <ul>
+      <li>Semester 1-3: Material Science, Physical Metallurgy</li>
+      <li>Semester 4-5: Heat Treatment, Welding, Foundry Tech</li>
+      <li>Semester 6: Plant Visit + Project Report</li>
+      <li>After Diploma:
+        <ul>
+          <li>D2D BTech Metallurgy or Join Steel/Foundry Industries</li>
+          <li>Advanced Courses in NDT, Welding Inspector</li>
+          <li>Govt Jobs: SAIL, BHEL, ISRO, BARC</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  </section>
+  </main>
+<div class="like-float" onclick="incrementLike()">
+  <img src="like.png" alt="Like">
+  <span id="like-count">0</span>
+</div>
+    <button class="share-btn" onclick="sharePage()"><i class="fas fa-share-alt"></i> <b>Share</b></button>
+  <script src="script.js"></script>
+
+  <footer class="footer">
+      <h3 class="footer-title">DiplomaX</h3> <h4>[ Diploma + Max = Max help in diploma ]</h4>
+      <br>
+      <div class="footer-container">
+      <div class="footer-links">
+
+      
+      <li><a href="jceceb.html"><i class="fas fa-pencil"></i> Entrance exam </a></li>
+      <li><a href="semester.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+      <li><a href="notice.html"><i class="fas fa-file"></i> Notices</a></li>
+
+      <li><i class="fas fa-phone"></i> Contact ="+917857985365"</li>
+     </div>
+       <div class="social-icons">
+               <a href="https://www.facebook.com/share/g/16NDTQhU8f/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/diplomax01"><i class="fab fa-telegram"></i></a>
+      <a href="https://chat.whatsapp.com/C90OWht67fmJBJmVFCM8gW"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+
+    </div>
+   <br> 
+    <div class="footer-bottom">
+    <p>copyright &copy;2025 Diplomax. All rights reserved.
+    Made by <b>Sumit Kumar Mahato</b></p></div>
+    <br></div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
