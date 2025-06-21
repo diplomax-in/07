@@ -1,3 +1,28 @@
+const quotes = [
+  "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+  "Don’t watch the clock; do what it does. Keep going.",
+  "The harder you work for something, the greater you'll feel when you achieve it.",
+  "Push yourself, because no one else is going to do it for you.",
+  "Sometimes later becomes never. Do it now.",
+  "Dream it. Wish it. Do it.",
+  "Great things never come from comfort zones.",
+  "Work hard in silence, let success make the noise.",
+  "Don't limit your challenges. Challenge your limits.",
+  "It always seems impossible until it's done. – Nelson Mandela",
+  "The future depends on what you do today. – Mahatma Gandhi",
+  "Your only limit is your mind.",
+  "Discipline is the bridge between goals and accomplishment.",
+  "Believe in yourself and all that you are.",
+  "Study while others are sleeping; work while others are loafing."
+];
+
+function showRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  document.getElementById('quote-text').textContent = quotes[randomIndex];
+}
+
+// Call on page load
+window.onload = showRandomQuote;
 function sharePage() {
     if (navigator.share) {
       navigator.share({
