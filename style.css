@@ -1,13 +1,13 @@
 .quote-box {
   display:flex;
   background: #e0f7fa;
-  border-left: 8px solid #00bcd4;
-  border-right: 8px solid #00bcd4;
+  border-left: 8px solid #003366;
+  border-right: 8px solid #003366;
   padding: 20px 25px;
   margin: 30px auto;
   font-size: 1.1rem;
   font-style: italic;
-  max-width: 700px;
+  max-width: 600px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
   color: #004d40;
