@@ -1,16 +1,13 @@
-.quote-box {
-  display:flex;
-  background: #e0f7fa;
-  border-left: 8px solid #003366;
-  border-right: 8px solid #003366;
-  padding: 20px 25px;
-  margin-around: 20px auto;
-  font-size: 1.1rem;
-  font-style: italic;
-  max-width: 600px;
+.quote {
+  background: #e6f0ff;
+  padding: 0px 0px;
+  position:center;
+  margin:10px auto;
+  font-size: 1.2rem;
+  font-style: none;
+  max-width: 300px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
-  color: #004d40;
+  color: #003366; 
   transition: all 0.3s ease;
 }
 * {
@@ -124,7 +121,7 @@ img{ border-radius:10px;
 
 
 .hero {
-  padding: 50px;
+  padding: 10px;
   text-align: center;
   background-color: #e6f0ff;
 }
@@ -367,7 +364,7 @@ h5 {font-size:15px;
   gap: 5px;
   padding: 5px;
   justify-content: center;
-  
+
 }
 
 .social-icons img {
@@ -375,7 +372,7 @@ h5 {font-size:15px;
   width: 30px;
   height: 30px;
   border:2px solid white;
-  
+
 }
 .subscribe-box {
   background: white;
