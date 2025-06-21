@@ -1,21 +1,8 @@
-document.getElementById("darkToggle").addEventListener("change", function () {
-  document.body.classList.toggle("invert-mode");
-
-  // Save choice
-  if (document.body.classList.contains("invert-mode")) {
-    localStorage.setItem("theme", "invert");
-  } else {
-    localStorage.setItem("theme", "normal");
-  }
-});
-
-// Load saved theme
-window.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("theme") === "invert") {
-    document.body.classList.add("invert-mode");
-    document.getElementById("darkToggle").checked = true;
-  }
-});
+const toggle = document.getElementById('modeToggle');
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('inverted');
+    });
+    
 const quotes = [
   "Success is not final, failure is not fatal: It is the courage to continue that counts.",
   "Don’t watch the clock; do what it does. Keep going.",
@@ -142,4 +129,3 @@ if (subscribeBtn) {
   if (branch) {
     document.getElementById(branch).style.display = 'block';
   }
-  
