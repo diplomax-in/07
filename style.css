@@ -2,6 +2,7 @@
   display:flex;
   background: #e0f7fa;
   border-left: 8px solid #00bcd4;
+  border-right: 8px solid #00bcd4;
   padding: 20px 25px;
   margin: 30px auto;
   font-size: 1.1rem;
