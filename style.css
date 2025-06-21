@@ -1,6 +1,7 @@
 /* Default style for quote (Mobile First) */
 #quote {
-  color:#eeff6a ;
+  display:flex;
+  color: #eeff6a ;
   font-size: 16px;
   text-align: center;
   margin: 10px auto;
