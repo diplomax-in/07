@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diplomax//Events Tracker//</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    main {
+      background: none;
+      color: white;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.1rem;
+      font-size: 1.7rem;
+      color: #003366;
+    }
+    .event-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .event-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 15px;
+      border-left: 5px solid blue;
+      box-shadow: 4px 6px 8px 0px #1e1e1e ;
+      
+      transition: 0.3s;
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+    }
+    .event-date {
+      font-size: 0.9rem;
+      color: #ff9d00;
+    }
+    .event-title {
+      color:#003366;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+    .event-desc {
+      font-size: 1rem;
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
+    .countdown {
+      font-size: 0.9rem;
+      color: #1100ff;
+    }
+    .event-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00eaff;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <header class="header">
+  <div class="header-container">
+    <img src="xlogo..png" alt="Diplomax Logo" class="xlogo" />
+
+
+  <button class="menu-toggle" id="menu-toggle">&#9776;
+  </button>
+  </div>
+  </header>
+
+  <nav class="navbar" id="navbar">
+    <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="jceceb.html"><i class="fas fa-pen"></i> Entrance exam</a></li>
+      
+      <li><a href="semesters.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+      <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
+    </ul>
+
+  </nav>
+</div>
+<section class="hero">
+  <h1>Diplomax Events & Deadlines Tracker</h1></section>
+  <main>
+  <div class="event-container" id="eventContainer">
+    <!-- Event cards will be inserted here by JS -->
+  </div>
+
+  <script>
+      // Responsive menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navbarList = document.getElementById('navbar')?.querySelector('ul'); // Optional chaining added
+
+if (menuToggle && navbarList) {
+  menuToggle.addEventListener('click', () => {
+    navbarList.classList.toggle('active');
+    menuToggle.innerHTML = navbarList.classList.contains('active') ? '&times;' : '&#9776;';
+  });
+}
+
+    const events = [
+      {
+        title: "Semester 2 Mid-Term Exams",
+        date: "2025-07-10T09:00:00",
+        description: "Mid-term exams for all branches (CSE, EE, ME, etc.)"
+      },
+      {
+        title: "Project Submission Deadline",
+        date: "2025-07-15T23:59:59",
+        description: "Last date to submit 2nd semester major project file."
+      },
+      {
+        title: "D2D Admission Form Last Date",
+        date: "2025-08-01T23:59:59",
+        description: "Deadline to fill Direct Second Year Engineering admission form.",
+        link: "https://d2d.admission.nic.in"
+      },
+      {
+        title: "Independence Day Holiday",
+        date: "2025-08-15T00:00:00",
+        description: "Public holiday across all campuses."
+      },
+      {
+        title: "Semester 2 Final Exams (Tentative)",
+        date: "2025-08-20T00:00:00",
+        description: "May be chances to be held in August 3rd week based on previous years."
+      },
+      {
+        title: "Polytechnic Fest 2025",
+        date: "2025-09-10T00:00:00",
+        description: "Annual college fest likely in September 2nd week. Get ready to showcase your talent!"
+      },
+      {
+        title: "GATE 2026 Registration Begins (Tentative)",
+        date: "2025-09-01T00:00:00",
+        description: "May be chances to start in early September for diploma holders eligible for B.Tech admission.",
+        link: "https://gate.iitkgp.ac.in"
+      },
+      {
+        title: "Winter Internship Notification",
+        date: "2025-11-15T00:00:00",
+        description: "Internship programs for 3rd year students may be announced by mid-November."
+      },
+      {
+        title: "Online Spoken English Workshop",
+        date: "2025-07-25T17:00:00",
+        description: "A virtual workshop to improve communication skills – registration may open soon.",
+        link: "https://spoken.diplomax.in"
+      },
+      {
+        title: "Resume Building Webinar",
+        date: "2025-08-05T16:00:00",
+        description: "Learn to create a professional resume using free tools. Chances are it will be held early August.",
+        link: "https://resume4me.diplomax.in"
+      },
+      {
+        title: "Technical Interview Practice Drive",
+        date: "2025-10-05T10:00:00",
+        description: "Mock interview sessions for final year students – may be organized by placement cell."
+      },
+      {
+        title: "Diplomax Talent Hunt Submission Deadline",
+        date: "2025-09-25T23:59:59",
+        description: "Last date to submit entries for poster, video or coding competition. Chances are it will be in September end.",
+        link: "https://diplomax.in/talenthunt"
+      }
+    ];
+
+    function getCountdown(targetDate) {
+      const now = new Date();
+      const diff = new Date(targetDate) - now;
+      if (diff <= 0) return "⏳ Happening Today or Passed";
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      return `⏱️ ${days} day${days !== 1 ? 's' : ''} left`;
+    }
+
+    const container = document.getElementById("eventContainer");
+    events.forEach(event => {
+      const card = document.createElement("div");
+      card.className = "event-card";
+      card.innerHTML = `
+        <div class="event-date">📆 ${new Date(event.date).toDateString()}</div>
+        <div class="event-title">${event.title}</div>
+        <div class="event-desc">${event.description}</div>
+        <div class="countdown">${getCountdown(event.date)}</div>
+        ${event.link ? `<a class="event-link" href="${event.link}" target="_blank">🔗 More Info</a>` : ''}
+      `;
+      container.appendChild(card);
+    });
+  </script>
+  
+  </main>
+  <footer class="footer">
+      <h3 class="footer-title">DiplomaX</h3> <h5>[ Diploma + Max = Max help in diploma ]</h5>
+      <br>
+      <div class="footer-container">
+      <div class="footer-links">
+
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="jceceb.html"><i class="fas fa-pencil"></i> Entrance exam </a></li>
+      <li><a href="semester.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+      <li><a href="notice.html"><i class="fas fa-file"></i> Notices</a></li>
+
+      <li><i class="fas fa-phone"></i> Contact ="+917857985365"</li>
+     </div>
+       <div class="social-icons">
+               <a href="https://www.facebook.com/share/g/16NDTQhU8f/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/diplomax01"><i class="fab fa-telegram"></i></a>
+      <a href="https://chat.whatsapp.com/C90OWht67fmJBJmVFCM8gW"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+
+    </div>
+   <br> 
+    <div class="footer-bottom">
+    <p>copyright &copy;2025 Diplomax. All rights reserved.
+    Made by <b>Sumit Kumar Mahato</b></p></div>
+    <br></div>
+  </footer>
+</body>
+</html>
+
+
