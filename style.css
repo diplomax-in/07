@@ -36,91 +36,7 @@ header {
     font-size: 16px;
   }
 }
-  /* Toggle Button Container */
-.toggle-container {
-      position: fixed;
-      top: 23px;
-      right: 60px;
-      z-index: 1000;
-    }
 
-    /* Slider Switch */
-.switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 30px;
-    }
-.switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    /* Slider */
-.slider {
-      position: absolute;
-      cursor: pointer;
-      background-color: #ccc;
-      transition: 0.4s;
-      border-radius: 34px;
-      width: 100%;
-      height: 100%;
-    }
-.slider:before {
-      position: absolute;
-      content: "🌞";
-      height: 24px;
-      width: 24px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 24px;
-      transition: 0.4s;
-      font-size: 16px;
-    }
-
-input:checked + .slider {
-      background-color: #666;
-    }
-
-input:checked + .slider:before {
-      transform: translateX(30px);
-      content: "🌙";
-    }
-
-    /* Inversion class */
-.inverted {
-      filter: invert(100%);
-      background-color: black;
-    }
-/* Default style for quote (Mobile First) */
-#quote {
-  display:flex;
-  color: #003366 ;
-  font-size: 16px;
-  text-align: center;
-  margin: 10px auto;
-  padding: 0px;
-  max-width: 90%;
-}
-
-/* Bigger text for larger screens */
-@media screen and (min-width: 768px) {
-  #quote {
-    font-size: 24px;
-    max-width: 70%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  #quote {
-    font-size: 28px;
-    max-width: 60%;
-  }
-}
 
 .xlogo{
     background-color:none;
@@ -195,7 +111,92 @@ img{ border-radius:10px;
      border:1px solid black;
      position:center;
 
+  /* Toggle Button Container */
+.toggle-container {
+      position: fixed;
+      top: 23px;
+      right: 50px;
+      z-index: 1000;
+    }
 
+    /* Slider Switch */
+.switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+    }
+.switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* Slider */
+.slider {
+      position: absolute;
+      cursor: pointer;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+      width: 100%;
+      height: 100%;
+    }
+
+.slider:before {
+      position: absolute;
+      content: "🌞";
+      height: 24px;
+      width: 24px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      transition: 0.4s;
+      font-size: 16px;
+    }
+
+input:checked + .slider {
+      background-color: #666;
+    }
+input:checked + .slider:before {
+      transform: translateX(30px);
+      content: "🌙";
+    }
+
+    /* Inversion class */
+.inverted {
+      filter: invert(100%);
+      background-color: black;
+    }
+/* Default style for quote (Mobile First) */
+#quote {
+  display:flex;
+  color: #eeff6a ;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px auto;
+  padding: 0px;
+  max-width: 90%;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* Bigger text for larger screens */
+@media screen and (min-width: 768px) {
+  #quote {
+    font-size: 24px;
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #quote {
+    font-size: 28px;
+    max-width: 60%;
+  }
+}
 }
 .bar {
   position:fixed;
