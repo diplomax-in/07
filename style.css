@@ -1,5 +1,5 @@
     /* Toggle Button Container */
-    .toggle-container {
+.toggle-container {
       position: fixed;
       top: 23px;
       right: 50px;
@@ -7,21 +7,21 @@
     }
 
     /* Slider Switch */
-    .switch {
+ .switch {
       position: relative;
       display: inline-block;
       width: 60px;
       height: 30px;
     }
 
-    .switch input {
+ .switch input {
       opacity: 0;
       width: 0;
       height: 0;
     }
 
     /* Slider */
-    .slider {
+ .slider {
       position: absolute;
       cursor: pointer;
       background-color: #ccc;
@@ -31,7 +31,7 @@
       height: 100%;
     }
 
-    .slider:before {
+ .slider:before {
       position: absolute;
       content: "🌞";
       height: 24px;
@@ -46,24 +46,24 @@
       font-size: 16px;
     }
 
-    input:checked + .slider {
+ input:checked + .slider {
       background-color: #666;
     }
 
-    input:checked + .slider:before {
+ input:checked + .slider:before {
       transform: translateX(30px);
       content: "🌙";
     }
 
     /* Inversion class */
-    .inverted {
+ .inverted {
       filter: invert(100%);
       background-color: black;
     }
 /* Default style for quote (Mobile First) */
 #quote {
   display:flex;
-  color: #eeff6a ;
+  color: #003366 ;
   font-size: 16px;
   text-align: center;
   margin: 10px auto;
