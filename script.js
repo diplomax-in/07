@@ -1,30 +1,4 @@
-let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'block';
-
-  installBtn.addEventListener('click', () => {
-    installBtn.style.display = 'none';
-    deferredPrompt.prompt();
-
-    deferredPrompt.userChoice.then(choice => {
-      if (choice.outcome === 'accepted') {
-        console.log('App Installed');
-      } else {
-        console.log('User Dismissed Install');
-      }
-      deferredPrompt = null;
-    });
-  });
-});
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(reg => console.log('Service Worker Registered'))
-    .catch(err => console.log('Service Worker Registration Failed:', err));
-}
 // Dark Mode Toggle
 const toggle = document.getElementById('modeToggle');
 if (toggle) {
@@ -158,4 +132,32 @@ function incrementLike() {
   if (likeDisplay) {
     likeDisplay.textContent = likeCount;
   }
+}
+//download app
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = 'block';
+
+  installBtn.addEventListener('click', () => {
+    installBtn.style.display = 'none';
+    deferredPrompt.prompt();
+
+    deferredPrompt.userChoice.then(choice => {
+      if (choice.outcome === 'accepted') {
+        console.log('App Installed');
+      } else {
+        console.log('User Dismissed Install');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(reg => console.log('Service Worker Registered'))
+    .catch(err => console.log('Service Worker Registration Failed:', err));
 }
