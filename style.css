@@ -111,7 +111,6 @@ img{ border-radius:10px;
      border:1px solid black;
      position:center;
 }
-  /* Toggle Button Container */
 .toggle-container {
       position: fixed;
       top: 23px;
@@ -171,7 +170,7 @@ input:checked + .slider:before {
       filter: invert(100%);
       background-color: black;
     }
-/* Default style for quote (Mobile First) */
+
 #quote {
   display:flex;
   color: #eeff6a ;
@@ -214,8 +213,6 @@ input:checked + .slider:before {
   color: black;
   padding: 8px 0;
 }
-
-
 
 .hero {
   padding: 10px;
