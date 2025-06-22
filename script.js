@@ -1,8 +1,12 @@
+// Dark Mode Toggle
 const toggle = document.getElementById('modeToggle');
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('inverted');
-    });
-    
+if (toggle) {
+  toggle.addEventListener('change', () => {
+    document.body.classList.toggle('inverted');
+  });
+}
+
+// Quotes Array
 const quotes = [
   "Success is not final, failure is not fatal: It is the courage to continue that counts.",
   "Don’t watch the clock; do what it does. Keep going.",
@@ -21,27 +25,34 @@ const quotes = [
   "Study while others are sleeping; work while others are loafing."
 ];
 
+// Show Random Quote
 function showRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  document.getElementById('quote-text').textContent = quotes[randomIndex];
+  const quoteElement = document.getElementById('quote-text');
+  if (quoteElement) {
+    quoteElement.textContent = quotes[randomIndex];
+  }
 }
 
-// Call on page load
-window.onload = showRandomQuote;
-function sharePage() {
-    if (navigator.share) {
-      navigator.share({
-        title: document.title,
-        text: 'Check out this page!',
-        url: window.location.href
-      })
-      .then(() => console.log('Page shared successfully!'))
-      .catch(error => console.log('Error sharing:', error));
-    } else {
-      alert('Sharing not supported on this browser.');
-    }
-  }
+// Page Load Quote
+window.addEventListener('load', showRandomQuote);
 
+// Share Page Functionality
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: 'Check out this page!',
+      url: window.location.href
+    })
+    .then(() => console.log('Page shared successfully!'))
+    .catch(error => console.error('Error sharing:', error));
+  } else {
+    alert('Sharing not supported on this browser.');
+  }
+}
+
+// Toggle Section Visibility
 function toggleSection(id, btn) {
   const sections = document.getElementsByClassName("section");
   const buttons = document.getElementsByClassName("toggle-btn");
@@ -69,28 +80,21 @@ function toggleSection(id, btn) {
     }
   }
 }
-// Like button functionality
-let likeCount = 0;
-function incrementLike() {
-  likeCount++;
-  document.getElementById("like-count").textContent = likeCount;
-}
 
-// Scroll animation for hidden elements
+// Scroll animation
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
+      entry.target.classList.remove('hidden');
     }
   });
 });
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach(el => observer.observe(el));
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-// Responsive menu toggle
+// Menu Toggle
 const menuToggle = document.getElementById('menu-toggle');
-const navbarList = document.getElementById('navbar')?.querySelector('ul'); // Optional chaining added
-
+const navbarList = document.getElementById('navbar')?.querySelector('ul');
 if (menuToggle && navbarList) {
   menuToggle.addEventListener('click', () => {
     navbarList.classList.toggle('active');
@@ -98,10 +102,10 @@ if (menuToggle && navbarList) {
   });
 }
 
-// Subscribe button functionality
+// Subscribe Button
 const subscribeBtn = document.getElementById("subscribe-btn");
 if (subscribeBtn) {
-  subscribeBtn.addEventListener("click", function () {
+  subscribeBtn.addEventListener("click", () => {
     const emailInput = document.getElementById("email");
     const agreeCheckbox = document.getElementById("agree");
 
@@ -112,20 +116,19 @@ if (subscribeBtn) {
     } else if (!agreeCheckbox.checked) {
       alert("Please agree to the Privacy Notice.");
     } else {
-      alert("Thank you for subscribing! Diplomax. You'll now receive updates from Diplomax Jharkhand polytechnic.");
-      emailInput.value = ""; // Clear input
+      alert("Thank you for subscribing! You'll now receive updates from Diplomax.");
+      emailInput.value = "";
       agreeCheckbox.checked = false;
     }
   });
 }
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const branch = urlParams.get('branch');
-
-  // Hide all sections first
-  document.querySelectorAll('.notes-section').forEach(sec => sec.style.display = 'none');
-
-  // Show the selected branch section
-  if (branch) {
-    document.getElementById(branch).style.display = 'block';
+// Like Button
+let likeCount = 0;
+function incrementLike() {
+  likeCount++;
+  const likeDisplay = document.getElementById("like-count");
+  if (likeDisplay) {
+    likeDisplay.textContent = likeCount;
   }
+}
