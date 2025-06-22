@@ -287,7 +287,7 @@ img{ border-radius:10px;
 .cards {
   display: flex;
   justify-content: space-around;
-  padding: 50px,50px;
+  padding: 50px 50px;
   flex-wrap: wrap;
 }
 
@@ -297,7 +297,7 @@ img{ border-radius:10px;
   width: 300px;
   padding: 30px;
   border-radius: 10px;
-  background-color: black;
+  background-color: white;
   border: 1px solid #ccc;
   margin-top: 20px;
   margin-bottom: 25px;
