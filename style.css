@@ -173,7 +173,7 @@ input:checked + .slider:before {
 
 #quote {
   display:flex;
-  color: #eeff6a ;
+  color: #003366;
   font-size: 16px;
   text-align: center;
   margin: 10px auto;
