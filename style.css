@@ -179,7 +179,7 @@ input:checked + .slider:before {
   text-align: center;
   margin: 10px auto;
   padding: 0px;
-  max-width: 90%;
+  max-width: 100%;
   
 }
 
