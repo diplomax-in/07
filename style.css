@@ -171,15 +171,16 @@ input:checked + .slider:before {
       background-color: black;
     }
 
+/* Default style for quote (Mobile First) */
 #quote {
   display:flex;
-  color:#003366;
+  color: #003366 ;
   font-size: 16px;
   text-align: center;
   margin: 10px auto;
   padding: 0px;
   max-width: 90%;
-  text-shadow: 2px 2px 5px black;
+  
 }
 
 /* Bigger text for larger screens */
@@ -195,7 +196,6 @@ input:checked + .slider:before {
     font-size: 28px;
     max-width: 60%;
   }
-}
 }
 .bar {
   position:fixed;
