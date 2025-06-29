@@ -26,13 +26,13 @@
 
 > (📸 Add these in a `screenshots/` folder and link below)
 
-![Home Page](screenshots/home.png)  
+![Home Page](home.jpg)  
 *Homepage with header and glowing title*
 
-![Courses Page](screenshots/courses.png)  
+![Courses Page](sem.jpg)  
 *Courses section with subject buttons*
 
-![Contact Page](screenshots/contact.png)  
+![Notes Page](notes.jpg)  
 *Simple and clean contact section*
 
 ---
