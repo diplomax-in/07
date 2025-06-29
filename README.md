@@ -1,4 +1,4 @@
-# 🎓 Diplomax - Diploma Student Support Platform
+# 🎓 Diplomax - Jharkhand Polytechnic
 
 **Diplomax** is a beautifully designed and student-focused educational website built for **Diploma students**, especially those pursuing Computer Science and Engineering. It aims to provide essential academic resources like notes, syllabus, previous year questions, career roadmaps, and important updates — all in one place.
 
@@ -24,7 +24,6 @@
 
 ## 🖼️ Screenshots
 
-> (📸 Add these in a `screenshots/` folder and link below)
 
 ![Home Page](home.jpg)  
 *Homepage with header and glowing title*
@@ -33,7 +32,7 @@
 *Courses section with subject buttons*
 
 ![Notes Page](notes.jpg)  
-*Simple and clean contact section*
+
 
 ---
 
