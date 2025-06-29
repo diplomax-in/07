@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diplomax-in.github.io/07/sitemap.xml
