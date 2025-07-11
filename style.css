@@ -470,9 +470,9 @@ h5 {font-size:15px;
 }
 .subscribe-box {
   background: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 90%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: left;
 }
