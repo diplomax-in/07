@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diplomax // Quiz Center//</title>
+  <style>
+      * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #dfefff, #e6f2ff);
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      color: #003366;
+      margin-bottom: 30px;
+      background: -webkit-linear-gradient(#003366, #0066cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    label {
+      font-size: 18px;
+      margin-top: 20px;
+      display: block;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .question {
+      margin: 25px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+.option {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  transition: background-color 0.3s ease;
+}
+.option:hover {
+  background-color: #e3f2fd;
+}
+.option input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.option label {
+  cursor: pointer;
+  margin: 0;
+}
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-style: italic;
+    }
+
+    button {
+      background: linear-gradient(to right, #0059b3, #007bff);
+      color: #fff;
+      padding: 14px 32px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 30px auto 0;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #003d80, #0066cc);
+      transform: scale(1.05);
+    }
+
+    #result {
+      margin-top: 40px;
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 28px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧠 Diplomax Quiz Center</h2>
+    
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" placeholder="Your Name" />
+
+    <label for="semester">Select Semester:</label>
+    <select id="semester">
+      <option value="">-- Select Semester --</option>
+      <option value="1">Semester 1</option>
+      <option value="2">Semester 2</option>
+    </select>
+
+    <label for="subject">Select Subject:</label>
+    <select id="subject">
+      <option value="">-- Select Subject --</option>
+    </select>
+
+    <div id="quizContainer"></div>
+
+    <button onclick="submitQuiz()"> Submit Quiz</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+      const subjectData = {
+  1: ["Physics", "Chemistry", "Math", "Communication Skills"],
+  2: ["Project Management", "Environmental Sustainability", "Electrical & Electronics", "Statistics"]
+};
+
+const questionsData = {
+  Physics: [
+     
+  {
+    question: "What is the SI unit of force?",
+    options: ["Newton", "Pascal", "Joule", "Watt"],
+    answer: "Newton"
+  },
+  {
+    question: "Which physical quantity is measured in Joules?",
+    options: ["Force", "Work", "Pressure", "Speed"],
+    answer: "Work"
+  },
+  {
+    question: "Speed = ?",
+    options: ["Distance × Time", "Distance / Time", "Time / Distance", "Velocity × Time"],
+    answer: "Distance / Time"
+  },
+  {
+    question: "Acceleration due to gravity is approximately:",
+    options: ["8.9 m/s²", "10 m/s²", "9.8 m/s²", "9.2 m/s²"],
+    answer: "9.8 m/s²"
+  },
+  {
+    question: "The unit of electric current is:",
+    options: ["Ampere", "Volt", "Ohm", "Coulomb"],
+    answer: "Ampere"
+  },
+  {
+    question: "Work is said to be done when:",
+    options: ["Force is applied", "Displacement occurs", "Force causes displacement", "Time is taken"],
+    answer: "Force causes displacement"
+  },
+  {
+    question: "Ohm's law is represented by:",
+    options: ["V = IR", "P = IV", "I = V/R", "V = I²R"],
+    answer: "V = IR"
+  },
+  {
+    question: "Which law states that every action has an equal and opposite reaction?",
+    options: ["First law", "Second law", "Third law", "Law of inertia"],
+    answer: "Third law"
+  },
+  {
+    question: "The SI unit of energy is:",
+    options: ["Watt", "Joule", "Newton", "Pascal"],
+    answer: "Joule"
+  },
+  {
+    question: "Heat always flows from:",
+    options: ["Hot to cold", "Cold to hot", "Low to high pressure", "High to low volume"],
+    answer: "Hot to cold"
+  },
+  {
+    question: "Which of these is a scalar quantity?",
+    options: ["Force", "Velocity", "Acceleration", "Speed"],
+    answer: "Speed"
+  },
+  {
+    question: "The property of a body to resist change in its state is:",
+    options: ["Momentum", "Friction", "Inertia", "Energy"],
+    answer: "Inertia"
+  },
+  {
+    question: "Which instrument is used to measure electric current?",
+    options: ["Voltmeter", "Ammeter", "Ohmmeter", "Thermometer"],
+    answer: "Ammeter"
+  },
+  {
+    question: "1 kilowatt = ?",
+    options: ["100 W", "1000 W", "10 W", "1 W"],
+    answer: "1000 W"
+  },
+  {
+    question: "Power = ?",
+    options: ["Work × Time", "Work / Time", "Force × Distance", "Force / Distance"],
+    answer: "Work / Time"
+  },
+  {
+    question: "The direction of magnetic field lines is:",
+    options: ["South to North", "North to South", "Clockwise", "Anti-clockwise"],
+    answer: "North to South"
+  },
+  {
+    question: "A concave lens always forms an image that is:",
+    options: ["Real and inverted", "Virtual and erect", "Magnified", "None"],
+    answer: "Virtual and erect"
+  },
+  {
+    question: "SI unit of pressure is:",
+    options: ["Joule", "Newton", "Pascal", "Bar"],
+    answer: "Pascal"
+  },
+  {
+    question: "Which of these is not a vector quantity?",
+    options: ["Velocity", "Displacement", "Speed", "Acceleration"],
+    answer: "Speed"
+  },
+  {
+    question: "A freely falling body has:",
+    options: ["Constant velocity", "Increasing velocity", "Zero acceleration", "Negative acceleration"],
+    answer: "Increasing velocity"
+  },
+  {
+    question: "Which energy is possessed due to motion?",
+    options: ["Potential energy", "Kinetic energy", "Thermal energy", "Chemical energy"],
+    answer: "Kinetic energy"
+  },
+  {
+    question: "Fuse is used to:",
+    options: ["Increase current", "Reduce voltage", "Prevent overcurrent", "Stop power"],
+    answer: "Prevent overcurrent"
+  },
+  {
+    question: "Resistance depends on:",
+    options: ["Length", "Area", "Material", "All of the above"],
+    answer: "All of the above"
+  },
+  {
+    question: "1 kWh = ?",
+    options: ["1000 J", "3600 J", "3.6 × 10^6 J", "36000 J"],
+    answer: "3.6 × 10^6 J"
+  },
+  {
+    question: "The lens used in magnifying glass is:",
+    options: ["Convex", "Concave", "Plane", "Cylindrical"],
+    answer: "Convex"
+  }
+ // Add more questions (up to 25)
+  ],
+  Chemistry: [
+    
+    {
+    question: "What is the atomic number of Hydrogen?",
+    options: ["1", "2", "3", "4"],
+    answer: "1"
+  },
+  {
+    question: "Which gas is used in the preparation of ammonia?",
+    options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Helium"],
+    answer: "Nitrogen"
+  },
+  {
+    question: "Which of these is an alkali?",
+    options: ["NaOH", "HCl", "H2SO4", "CH3COOH"],
+    answer: "NaOH"
+  },
+  {
+    question: "The pH value of pure water is:",
+    options: ["5", "6", "7", "8"],
+    answer: "7"
+  },
+  {
+    question: "Which element is a noble gas?",
+    options: ["Hydrogen", "Oxygen", "Argon", "Nitrogen"],
+    answer: "Argon"
+  },
+  {
+    question: "What is the chemical formula of washing soda?",
+    options: ["Na2CO3", "NaCl", "NaHCO3", "NaOH"],
+    answer: "Na2CO3"
+  },
+  {
+    question: "Acids turn blue litmus paper:",
+    options: ["Red", "Green", "Orange", "Yellow"],
+    answer: "Red"
+  },
+  {
+    question: "Which of the following is a base?",
+    options: ["HCl", "NaOH", "H2SO4", "CH3COOH"],
+    answer: "NaOH"
+  },
+  {
+    question: "Which gas is released during a reaction between acid and metal?",
+    options: ["Oxygen", "Hydrogen", "Carbon dioxide", "Nitrogen"],
+    answer: "Hydrogen"
+  },
+  {
+    question: "Rusting of iron is a:",
+    options: ["Physical change", "Chemical change", "Reversible change", "Temporary change"],
+    answer: "Chemical change"
+  },
+  {
+    question: "Water is a:",
+    options: ["Element", "Mixture", "Compound", "Salt"],
+    answer: "Compound"
+  },
+  {
+    question: "Which acid is present in lemon?",
+    options: ["Acetic acid", "Sulfuric acid", "Citric acid", "Hydrochloric acid"],
+    answer: "Citric acid"
+  },
+  {
+    question: "Atomic mass of Carbon is:",
+    options: ["12", "14", "16", "10"],
+    answer: "12"
+  },
+  {
+    question: "Which of the following is a non-metal?",
+    options: ["Sodium", "Calcium", "Chlorine", "Aluminium"],
+    answer: "Chlorine"
+  },
+  {
+    question: "Chemical symbol of Potassium is:",
+    options: ["Po", "Pt", "K", "P"],
+    answer: "K"
+  },
+  {
+    question: "Which is the universal solvent?",
+    options: ["Ethanol", "Water", "Acetone", "Sulphur"],
+    answer: "Water"
+  },
+  {
+    question: "Litmus is obtained from:",
+    options: ["Algae", "Bacteria", "Lichen", "Fungus"],
+    answer: "Lichen"
+  },
+  {
+    question: "Which substance turns red litmus blue?",
+    options: ["Vinegar", "Salt", "Baking soda", "Sugar"],
+    answer: "Baking soda"
+  },
+  {
+    question: "Which one is an example of exothermic reaction?",
+    options: ["Melting of ice", "Boiling of water", "Combustion", "Evaporation"],
+    answer: "Combustion"
+  },
+  {
+    question: "Which metal is liquid at room temperature?",
+    options: ["Lead", "Mercury", "Zinc", "Copper"],
+    answer: "Mercury"
+  },
+  {
+    question: "Which element is essential for respiration?",
+    options: ["Oxygen", "Nitrogen", "Helium", "Hydrogen"],
+    answer: "Oxygen"
+  },
+  {
+    question: "The smallest particle of an element is:",
+    options: ["Molecule", "Electron", "Atom", "Neutron"],
+    answer: "Atom"
+  },
+  {
+    question: "What is the chemical formula of water?",
+    options: ["H2O", "HO2", "OH2", "H2O2"],
+    answer: "H2O"
+  },
+  {
+    question: "Which gas is used in soft drinks?",
+    options: ["O2", "CO2", "H2", "N2"],
+    answer: "CO2"
+  },
+  {
+    question: "The most abundant gas in Earth's atmosphere is:",
+    options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Argon"],
+    answer: "Nitrogen"
+  }
+    // Add more questions (up to 25)
+  ],
+  Math: [
+    {
+      question: "What is the value of \u03c0 (pi) up to 2 decimal places?",
+      options: ["3.14", "2.17", "3.33", "3.00"],
+      answer: "3.14"
+    }
+    // Add more questions (up to 25)
+  ],
+  "Communication Skills": [
+    {
+      question: "Which one is a form of verbal communication?",
+      options: ["Speaking", "Gestures", "Facial Expressions", "Body Language"],
+      answer: "Speaking"
+    }
+    // Add more questions (up to 25)
+  ],
+  "Project Management": [
+    {
+      question: "What does a Gantt chart show?",
+      options: ["Project schedule", "Team structure", "Budget", "Scope"],
+      answer: "Project schedule"
+    }
+    // Add more questions (up to 25)
+  ],
+  "Environmental Sustainability": [
+    {
+      question: "Which is a renewable source of energy?",
+      options: ["Solar", "Coal", "Natural Gas", "Diesel"],
+      answer: "Solar"
+    }
+    // Add more questions (up to 25)
+  ],
+  "Electrical & Electronics": [
+    {
+      question: "What is the unit of electrical resistance?",
+      options: ["Ohm", "Volt", "Ampere", "Watt"],
+      answer: "Ohm"
+    }
+    // Add more questions (up to 25)
+  ],
+  Statistics: [
+    {
+      question: "What is the mean of 2, 4, 6, 8, 10?",
+      options: ["6", "5", "8", "7"],
+      answer: "6"
+    }
+    // Add more questions (up to 25)
+  ]
+};
+
+document.getElementById("semester").addEventListener("change", function () {
+  const semester = this.value;
+  const subjectSelect = document.getElementById("subject");
+  subjectSelect.innerHTML = '<option value="">-- Select Subject --</option>';
+  if (semester && subjectData[semester]) {
+    subjectData[semester].forEach(sub => {
+      const opt = document.createElement("option");
+      opt.value = sub;
+      opt.textContent = sub;
+      subjectSelect.appendChild(opt);
+    });
+  }
+});
+
+document.getElementById("subject").addEventListener("change", function () {
+  const subject = this.value;
+  const quizContainer = document.getElementById("quizContainer");
+  quizContainer.innerHTML = "";
+
+  if (questionsData[subject]) {
+    questionsData[subject].forEach((q, i) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.innerHTML = `<strong>Q${i + 1}. ${q.question}</strong>`;
+      q.options.forEach(opt => {
+        div.innerHTML += `
+          <div class="option">
+            <input type="radio" name="q${i}" value="${opt}" />
+            <label>${opt}</label>
+          </div>
+        `;
+      });
+      quizContainer.appendChild(div);
+    });
+  } else {
+    quizContainer.innerHTML = "<p>No questions available yet for this subject.</p>";
+  }
+});
+
+function submitQuiz() {
+  const subject = document.getElementById("subject").value;
+  const questions = questionsData[subject];
+  const resultDiv = document.getElementById("result");
+  let score = 0;
+  resultDiv.innerHTML = "";
+
+  if (!questions) return;
+
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name='q${i}']:checked`);
+    if (selected) {
+      const userAns = selected.value;
+      const isCorrect = userAns === q.answer;
+      if (isCorrect) score++;
+
+      resultDiv.innerHTML += `
+        <p><strong>Q${i + 1}:</strong> ${q.question}<br/>
+        Your Answer: <span class="${isCorrect ? 'correct' : 'incorrect'}">${userAns}</span><br/>
+        Correct Answer: <span class="correct">${q.answer}</span></p>
+      `;
+    } else {
+      resultDiv.innerHTML += `
+        <p><strong>Q${i + 1}:</strong> ${q.question}<br/>
+        <span class="incorrect">You did not answer this question.</span><br/>
+        Correct Answer: <span class="correct">${q.answer}</span></p>
+      `;
+    }
+  });
+
+  const name = document.getElementById("name").value || "Student";
+  resultDiv.innerHTML = `<h3>Hi ${name}, you scored <span style="color:green">${score}/${questions.length}</span></h3>` + resultDiv.innerHTML;
+}
+
+
+  </script>
+</body>
+</html>
