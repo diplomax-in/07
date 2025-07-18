@@ -525,7 +525,48 @@ input[type="email"] {
   height: 450px;
   border:2px solid #272727;
 }
+  /* 🔴 Offline Overlay */
+    #offlineOverlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
 
+    #offlineOverlay img {
+      width: 180px;
+      animation: glitch 1s infinite;
+      filter: drop-shadow(0 0 10px red);
+    }
+
+    #offlineOverlay h1 {
+      color: red;
+      font-size: 28px;
+      margin-top: 20px;
+      text-shadow: 0 0 10px red;
+      animation: blink 1s infinite;
+    }
+
+    /* 🔁 Glitch Effect */
+    @keyframes glitch {
+      0% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+      25% { transform: scale(1.02) rotate(1deg); opacity: 1; }
+      50% { transform: scale(0.98) rotate(-1deg); opacity: 0.95; }
+      75% { transform: scale(1.03) rotate(1deg); opacity: 1; }
+      100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
 /* Footer Styles */
 .footer {
   background-color: #003366;
