@@ -1,7 +1,28 @@
-self.addEventListener('install', function (e) {
-  console.log('Service Worker Installed');
+const cacheName = "diplomax-cache-v1";
+const filesToCache = [
+  "/07/", // path to your repo root
+  "/07/index.html",
+  "/07/style.css",       // replace with your css file
+  "/07/script.js",       // replace with your js file
+  "/07/manifest.json",
+  "/07/icons/icon-192.png",
+  "/07/icons/icon-512.png"
+];
+
+// Install Service Worker
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open(cacheName).then(cache => {
+      return cache.addAll(filesToCache);
+    })
+  );
 });
 
-self.addEventListener('fetch', function (e) {
-  console.log('Service Worker Fetching:', e.request.url);
+// Fetch resources
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
+  );
 });
