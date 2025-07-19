@@ -526,8 +526,10 @@ input[type="email"] {
   border:2px solid #272727;
 }
   .install-app-btn {
-  padding: 14px 28px;
-  font-size: 18px;
+  padding: 7px 14px;
+  position:fixed;
+  z-index:1007;
+  font-size: 1rem;
   font-weight: bold;
   color: black;
   background: linear-gradient(135deg, #00b894, #0984e3);
