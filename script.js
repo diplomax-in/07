@@ -166,24 +166,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(reg => console.log('Service Worker Registered'))
-    .catch(err => console.log('Service Worker Registration Failed:', err));
-}
-const overlay = document.getElementById("offlineOverlay");
-
-    function checkStatus() {
-      if (!navigator.onLine) {
-        overlay.style.display = "flex";
-      } else {
-        overlay.style.display = "none";
-      }
-    }
-
-    // Check on load
-    checkStatus();
-
-    // Listen for connection changes
-    window.addEventListener("online", checkStatus);
-    window.addEventListener("offline", checkStatus);
