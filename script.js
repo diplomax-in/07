@@ -1,3 +1,8 @@
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch(error => console.log("❌ Service Worker Failed", error));
+}
     (function(d, w, c) {
         w.ChatraID = 'butnt9brnBzjzsY5P';
         var s = d.createElement('script');
