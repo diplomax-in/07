@@ -528,7 +528,6 @@ input[type="email"] {
   .install-app-btn {
   padding: 7px 14px;
   position:fixed;
-  z-index:900;
   font-size: 1rem;
   font-weight: bold;
   color: black;
