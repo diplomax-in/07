@@ -3,6 +3,31 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("✅ Service Worker Registered"))
     .catch(error => console.log("❌ Service Worker Failed", error));
 }
+
+  let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+
+  // Hide button by default
+  installBtn.style.display = 'none';
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'inline-block'; // Show install button
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        console.log('✅ App installed');
+        installBtn.style.display = 'none';
+      }
+      deferredPrompt = null;
+    }
+  });
+
     (function(d, w, c) {
         w.ChatraID = 'butnt9brnBzjzsY5P';
         var s = d.createElement('script');
