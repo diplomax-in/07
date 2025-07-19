@@ -1,10 +1,10 @@
 {
-  "name": "DIPLOMAX - Jharkhand Polytechnic 🧡🤍💚",
+  "name": "Diplomax - Jharkhand Polytechnic",
   "short_name": "Diplomax",
-  "start_url": "https://diplomax-in.github.io/07/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "none",
+  "theme_color": "#2c3e50",
   "icons": [
     {
       "src": "applogo.png",
