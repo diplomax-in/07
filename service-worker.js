@@ -5,8 +5,8 @@ const filesToCache = [
   "/07/style.css",       // replace with your css file
   "/07/script.js",       // replace with your js file
   "/07/manifest.json",
-  "/07/icons/icon-192.png",
-  "/07/icons/icon-512.png"
+  "/07/applogo.png",
+  "/07/applogo.png"
 ];
 
 // Install Service Worker
