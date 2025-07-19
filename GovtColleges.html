@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diploma Engineering Career Roadmaps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:#003366;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 3px 10px;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}   
+.xlogo{
+    background-color:none;
+    border:none;
+    width:180px;
+    margin-right:1px;
+}
+
+.menu-toggle {
+  background-color:#003366;
+  display:flex;
+  font-weight: ;
+  font-size: 24px;
+  color: white;
+}
+nav ul {
+  list-style: none;
+  background-color: #003366;
+  flex-direction: column;  
+  display: none;
+  padding: 10px 0;
+}
+
+nav ul.active {
+  display: flex;
+}
+
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: #003366;
+}
+
+/* Desktop view improvements */
+@media (min-width: 769px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    display: none; /* Still hidden unless toggled */
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+.menu-container {
+  position: relative;
+  padding: 10px;
+}
+
+img{ border-radius:10px;
+     border:1px solid black;
+     position:center;
+
+
+}
+.bar {
+  position:fixed;
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 0;
+}
+
+
+main {
+  padding: 20px;
+  background-color:white;
+}
+h1 {
+  text-align: center;
+  color: #003366;
+    }
+ body
+{
+.whatsapp-float {
+  position: fixed;
+  bottom: 113px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  background-color:white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.like-float {
+  position: fixed;
+  bottom: 68px;
+  right: 20px;
+  background-color: #ff3b3f;
+  border-radius: 30px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.like-float img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+#like-count {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+.share-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+}  
+.hero {
+  padding-top: 30px;
+  padding-bottom:30px;
+  padding-left:10px;
+  padding-right:10px;
+  text-align: center;
+  background-color: #e6f0ff;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px,50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  right: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  box-shadow: 4px 6px 8px 0px #1e1e1e ;
+  
+}
+
+.card h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 10px;
+      margin-top: 5px;
+    }
+    ul {
+      margin: 10px 10px;
+      padding-left: 10px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+.branches { 
+     list-style-type:square; 
+     padding-left:20px;
+     font-size:1rem;
+     }
+a.website { 
+     display:inline-block; 
+     margin-top:8px; 
+     color:#fff; 
+     background:#27ae60;
+     padding:8px 12px; 
+     border-radius:4px;
+     text-decoration:none; }
+
+a.website:hover { 
+     background:#219150;
+      }
+
+/* Footer Styles */
+
+
+
+/* Footer Bottom Text */
+.footer-bottom {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background:#003366;
+  text-align:center;
+  border-top: 1px solid #555;
+  padding-top: 15px;
+  padding-bottom:15px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+  </style>
+</head>
+<body>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <header class="header">
+  <div class="header-container">
+    <img src="xlogo..png" alt="Diplomax Logo" class="xlogo" />
+
+
+  <button class="menu-toggle" id="menu-toggle">&#9776;
+  </button>
+  </div>
+  </header>
+
+  <nav class="navbar" id="navbar">
+    <ul>
+        <li><a href="quiz"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="jceceb.html"><i class="fas fa-pen"></i> Entrance exam</a></li>
+      
+      <li><a href="semesters.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+      <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
+    </ul>
+
+  </nav>
+</div>
+
+    <div class="hero">
+    <h2>Jharkhand Polytechnic Colleges</h2>
+<p>All these information we collect from the official website of jharkhand polytechnic <br> i.e, JUT(Jharkhand University of Technology) Ranchi. </p>
+</div>
+<main>
+     <section class="cards">
+  
+<div class="card">
+    <h2>Government Polytechnic Nirsa, Dhanbad</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Mining Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+    <a class="website" href="https://www.gpnirsa.ac.in/" target="_blank">Official Website</a>
+
+    <!-- No official site found -->
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Adityapur</h2>
+    <ul class="branches">
+      <li>Electrical Engineering</li>
+      <li>Metallurgical Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+    <a class="website" href="https://www.gpadp.org.in" target="_blank">Official Website</a>
+</div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Bhaga (Dhanbad)</h2>
+    <ul class="branches">
+      <li>Computer Engineering</li>
+      <li>Food Technology</li>
+      <li>Mining Engineering</li>
+    </ul>
+    <a class="website" href="http://www.gpbhaga.com/" target="_blank">Official Website</a>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Dhanbad</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Metallurgical Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+   <a class="website" href="https://gpdhanbad.ac.in/" target="_blank">Official Website</a>
+</div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Dumka</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+    <a class="website" href="https://gpdumka.co.in/" target="_blank">Official Website</a>
+</div>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Jagannathpur</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical & Electronics Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+    <a class="website" href="https://www.gpjagannathpur.in/" target="_blank">Official Website</a>
+</div>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Kharsawan</h2>
+    <ul class="branches">
+      <li>Computer Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+      <li>Electrical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Khutri (Bokaro)</h2>
+    <ul class="branches">
+      <li>Automobile Engineering</li>
+      <li>Computer Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+    <a class="website" href="https://www.gpkhutri.co.in/" target="_blank">Official Website</a>
+</div>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Koderma</h2>
+    <ul class="branches">
+      <li>Computer Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+      <li>Mining Engineering</li>
+    </ul>
+    <a class="website" href="mailto:gmti.koderma@rediffmail.com">Email Contact</a>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Latehar</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Ranchi</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+    <a class="website" href="https://gpranchi.co.in/" target="_blank">Official Website</a>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Sahibganj</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Electrical & Electronics Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Polytechnic, Simdega</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Electrical & Electronics Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Women’s Polytechnic, Bokaro</h2>
+    <ul class="branches">
+      <li>Electrical Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Women’s Polytechnic, Dumka</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical & Electronics Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Women’s Polytechnic, Jamshedpur</h2>
+    <ul class="branches">
+      <li>Architectural Assistantship Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Government Women’s Polytechnic, Ranchi</h2>
+    <ul class="branches">
+      <li>Computer Science Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+    </ul>
+  </div>
+
+  <!-- Semi‑Government / PPP Institutes -->
+  <div class="card">
+    <h2>Beharagora Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Metallurgical Engineering</li>
+      <li>Mining Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Chandil Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical & Electronics Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+      <li>Automobile Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Garhwa Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Gola Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical & Electronics Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+      <li>Automobile Engineering</li>
+    </ul>
+    <a class="website" href="https://golapolytechnic.org/" target="_blank">Official Website</a>
+  </div>
+
+  <div class="card">
+    <h2>Gumla Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Automobile Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+      <li>Mining Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Madhupur Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Engineering & Application</li>
+      <li>Electrical Engineering</li>
+      <li>Mining Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Pakur Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Metallurgical Engineering</li>
+      <li>Mining Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Silli Polytechnic (PPP)</h2>
+    <ul class="branches">
+      <li>Civil Engineering</li>
+      <li>Computer Science Engineering</li>
+      <li>Electronics & Communication Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Mechanical Engineering</li>
+    </ul>
+  </div>
+ 
+  </section>
+  </main>
+<div class="like-float" onclick="incrementLike()">
+  <img src="like.png" alt="Like">
+  <span id="like-count">0</span>
+</div>
+    <button class="share-btn" onclick="sharePage()"><i class="fas fa-share-alt"></i> <b>Share</b></button>
+  <script src="script.js"></script>
+
+  
+      
+    <div class="footer-bottom">
+    <p>copyright &copy;2025 Diplomax. All rights reserved.
+    Made by <b>Sumit Kumar Mahato</b></p></div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
