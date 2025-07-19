@@ -173,26 +173,41 @@ function incrementLike() {
     likeDisplay.textContent = likeCount;
   }
 }
-//download app
+// ✅ Register the Service Worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("service-worker.js")
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch(error => console.log("❌ Service Worker Failed:", error));
+}
+
+// 🛠️ Custom PWA Install Button Logic
 let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
+const installBtn = document.getElementById("installBtn");
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'block';
+// Hide the install button initially
+installBtn.style.display = "none";
 
-  installBtn.addEventListener('click', () => {
-    installBtn.style.display = 'none';
-    deferredPrompt.prompt();
+// Listen for the beforeinstallprompt event
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();              // Stop default browser install prompt
+  deferredPrompt = e;             // Save the event for later use
+  installBtn.style.display = "inline-block"; // Show custom button
+});
 
-    deferredPrompt.userChoice.then(choice => {
-      if (choice.outcome === 'accepted') {
-        console.log('App Installed');
-      } else {
-        console.log('User Dismissed Install');
-      }
-      deferredPrompt = null;
-    });
-  });
+// Handle button click
+installBtn.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();     // Show the install prompt
+    const result = await deferredPrompt.userChoice;
+
+    if (result.outcome === "accepted") {
+      console.log("✅ App installed");
+    } else {
+      console.log("❌ App installation dismissed");
+    }
+
+    installBtn.style.display = "none"; // Hide after interaction
+    deferredPrompt = null;             // Reset the prompt
+  }
 });
