@@ -525,7 +525,27 @@ input[type="email"] {
   height: 450px;
   border:2px solid #272727;
 }
-  
+  .install-app-btn {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #00b894, #0984e3);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.install-app-btn:hover {
+  background: linear-gradient(135deg, #0984e3, #00b894);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.9);
+}
 /* Footer Styles */
 .footer {
   background-color: #003366;
