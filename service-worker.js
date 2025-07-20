@@ -1,25 +1,27 @@
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log('✅ Service Worker Registered'))
-    .catch(error => console.log('❌ SW registration failed:', error));
-}
+const cacheName = "diplomax-cache-v1";
+const filesToCache = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./manifest.json",
+  "./applogo.png"
+];
 
-let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
+// Install Service Worker
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open(cacheName).then(cache => {
+      return cache.addAll(filesToCache);
+    })
+  );
+});
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
-
-  installBtn.addEventListener('click', () => {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(choiceResult => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('✅ App installed');
-      } else {
-        console.log('❌ App install dismissed');
-      }
-    });
-  });
+// Fetch resources
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
+  );
 });
