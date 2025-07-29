@@ -297,7 +297,7 @@ input:checked + .slider:before {
   width: 300px;
   padding: 30px;
   border-radius: 45px 0px;
-  background-color: white;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   margin-top: 20px;
   margin-bottom: 25px;
