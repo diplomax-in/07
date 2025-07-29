@@ -215,7 +215,7 @@ input:checked + .slider:before {
 }
 
 .hero {
-  background: linear-gradient(to right, #e6f0ff, #ffffff);
+  background: #e6f0ff;
   padding: 50px;
   text-align: center;
 }
