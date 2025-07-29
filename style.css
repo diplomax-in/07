@@ -215,11 +215,15 @@ input:checked + .slider:before {
 }
 
 .hero {
-  background: #e6f0ff;
+  padding: 10px;
+  text-align: center;  
+  background-color: #e6f0ff;
+}
+
+.hero {
   padding: 50px;
   text-align: center;
 }
-
 .btn {
   background-color: #007bff;
   color:white;
