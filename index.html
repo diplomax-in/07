@@ -4,9 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="manifest" href="manifest.json">
+  <!-- Meta for PWA -->
 <meta name="theme-color" content="#2c3e50" />
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="applogo.png" type="image/png">
 
+<!-- iOS support (optional but good) -->
+<link rel="apple-touch-icon" href="applogo.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Diplomax is a student platform that provides notes, syllabus, previous year questions, and updates for diploma students.">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="language" content="English" />
@@ -62,8 +68,8 @@
       <b><p id="quote-text">Loading quote...</p></b>
     </div>
 <br>
-<button id="installBtn" class="install-app-btn">
-  <i class="fas fa-download"></i> Install Diplomax App
+<button class="install-app-btn" id="install-btn" style="display: none;">
+  Install Diplomax App
 </button>
 
   </section>
