@@ -480,7 +480,7 @@ h5 {font-size:15px;
   background: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 90%;
+  max-width: 24rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: left;
 }
