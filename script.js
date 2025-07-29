@@ -150,35 +150,29 @@ if ('serviceWorker' in navigator) {
 }
 
 // ✅ PWA Install Prompt
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("Service Worker Registered"));
+}
+
+// Install prompt logic
 let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
-if (installBtn) installBtn.style.display = 'none';
+const installBtn = document.getElementById('install-btn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  if (installBtn) installBtn.style.display = 'inline-block';
-});
+  installBtn.style.display = 'inline-block';
 
-if (installBtn) {
   installBtn.addEventListener('click', () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then(choiceResult => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('✅ App installed');
-        } else {
-          console.log('❌ App install dismissed');
-        }
-        deferredPrompt = null;
-        installBtn.style.display = 'none';
-      });
-    }
+    installBtn.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted install prompt');
+      }
+      deferredPrompt = null;
+    });
   });
-}
-
-// ✅ Hide install button after installation
-window.addEventListener('appinstalled', () => {
-  console.log('🎉 PWA Installed Successfully!');
-  if (installBtn) installBtn.style.display = 'none';
 });
