@@ -217,7 +217,7 @@ input:checked + .slider:before {
 .hero {
   padding: 10px;
   text-align: center;  
-  background-color: #e6f0ff;
+  background-color: #bfeaff;
 }
 
 .hero {
@@ -288,6 +288,7 @@ input:checked + .slider:before {
   justify-content: space-around;
   padding: 50px,50px;
   flex-wrap: wrap;
+  background:#bfeaff;
 }
 
 .card {
@@ -295,7 +296,7 @@ input:checked + .slider:before {
   left: 50%;
   width: 300px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 45px 0px;
   background-color: white;
   border: 1px solid #ccc;
   margin-top: 20px;
