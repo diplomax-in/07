@@ -1,16 +1,16 @@
+// ✅ Chatra Live Chat
+(function(d, w, c) {
+  w.ChatraID = 'butnt9brnBzjzsY5P';
+  var s = d.createElement('script');
+  w[c] = w[c] || function() {
+    (w[c].q = w[c].q || []).push(arguments);
+  };
+  s.async = true;
+  s.src = 'https://call.chatra.io/chatra.js';
+  if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
 
-    (function(d, w, c) {
-        w.ChatraID = 'butnt9brnBzjzsY5P';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-
-// Dark Mode Toggle
+// ✅ Dark Mode Toggle
 const toggle = document.getElementById('modeToggle');
 if (toggle) {
   toggle.addEventListener('change', () => {
@@ -18,7 +18,7 @@ if (toggle) {
   });
 }
 
-// Quotes Array
+// ✅ Motivational Quotes
 const quotes = [
   "Success is not final, failure is not fatal: It is the courage to continue that counts.",
   "Don’t watch the clock; do what it does. Keep going.",
@@ -37,19 +37,16 @@ const quotes = [
   "Study while others are sleeping; work while others are loafing."
 ];
 
-// Show Random Quote
 function showRandomQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
   const quoteElement = document.getElementById('quote-text');
   if (quoteElement) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteElement.textContent = quotes[randomIndex];
   }
 }
-
-// Page Load Quote
 window.addEventListener('load', showRandomQuote);
 
-// Share Page Functionality
+// ✅ Web Share API
 function sharePage() {
   if (navigator.share) {
     navigator.share({
@@ -57,14 +54,14 @@ function sharePage() {
       text: 'Check out this page!',
       url: window.location.href
     })
-    .then(() => console.log('Page shared successfully!'))
-    .catch(error => console.error('Error sharing:', error));
+    .then(() => console.log('✅ Page shared'))
+    .catch(err => console.error('❌ Error sharing:', err));
   } else {
     alert('Sharing not supported on this browser.');
   }
 }
 
-// Toggle Section Visibility
+// ✅ Toggle Section View
 function toggleSection(id, btn) {
   const sections = document.getElementsByClassName("section");
   const buttons = document.getElementsByClassName("toggle-btn");
@@ -93,7 +90,7 @@ function toggleSection(id, btn) {
   }
 }
 
-// Scroll animation
+// ✅ Scroll Reveal Animation
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -104,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-// Menu Toggle
+// ✅ Menu Toggle
 const menuToggle = document.getElementById('menu-toggle');
 const navbarList = document.getElementById('navbar')?.querySelector('ul');
 if (menuToggle && navbarList) {
@@ -114,7 +111,7 @@ if (menuToggle && navbarList) {
   });
 }
 
-// Subscribe Button
+// ✅ Subscribe Button Handler
 const subscribeBtn = document.getElementById("subscribe-btn");
 if (subscribeBtn) {
   subscribeBtn.addEventListener("click", () => {
@@ -135,7 +132,7 @@ if (subscribeBtn) {
   });
 }
 
-// Like Button
+// ✅ Like Button Functionality
 let likeCount = 0;
 function incrementLike() {
   likeCount++;
@@ -145,29 +142,43 @@ function incrementLike() {
   }
 }
 
-
+// ✅ Register Service Worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
+  navigator.serviceWorker.register('/07/service-worker.js')
     .then(() => console.log('✅ Service Worker Registered'))
     .catch(error => console.log('❌ SW registration failed:', error));
 }
 
+// ✅ PWA Install Prompt
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
+if (installBtn) installBtn.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
+  if (installBtn) installBtn.style.display = 'inline-block';
+});
 
+if (installBtn) {
   installBtn.addEventListener('click', () => {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(choiceResult => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('✅ App installed');
-      } else {
-        console.log('❌ App install dismissed');
-      }
-    });
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(choiceResult => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('✅ App installed');
+        } else {
+          console.log('❌ App install dismissed');
+        }
+        deferredPrompt = null;
+        installBtn.style.display = 'none';
+      });
+    }
   });
+}
+
+// ✅ Hide install button after installation
+window.addEventListener('appinstalled', () => {
+  console.log('🎉 PWA Installed Successfully!');
+  if (installBtn) installBtn.style.display = 'none';
 });
