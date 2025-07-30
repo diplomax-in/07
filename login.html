@@ -1,65 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diplomax Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #2c3e50;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #1a242f;
+    }
+
+    .message {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        margin: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>Login to Diplomax</h2>
-  <input type="email" id="email" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Password"><br>
-  <button onclick="login()">Login</button>
-  <button onclick="signup()">Signup</button>
-  <p id="status"></p>
+  <div class="login-box">
+    <h2>DIPLOMAX Login</h2>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+    </div>
+    <button class="btn" onclick="login()">Login</button>
+    <p class="message" id="msg"></p>
+  </div>
 
-  <script type="module">
-    // Import Firebase modules
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
-    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
 
-    // Firebase Config
+  <script>
+    // Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyAxXyOkWXwFsg5RON1MbWdvV8a00USfCDI",
       authDomain: "diplomax-auth.firebaseapp.com",
       projectId: "diplomax-auth",
-      storageBucket: "diplomax-auth.firebasestorage.app",
+      storageBucket: "diplomax-auth.appspot.com",
       messagingSenderId: "1076802833042",
       appId: "1:1076802833042:web:fd1ae5754cc9cb47e9744b",
       measurementId: "G-XVFLTZ57EP"
     };
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const auth = getAuth(app);
+    firebase.initializeApp(firebaseConfig);
 
-    // Login Function
-    window.login = function () {
+    function login() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+      const msg = document.getElementById("msg");
 
-      signInWithEmailAndPassword(auth, email, password)
+      firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          window.location.href = "dashboard.html";
+          msg.style.color = "green";
+          msg.innerText = "✅ Login successful!";
+          // Redirect if needed
+          // window.location.href = "dashboard.html";
         })
         .catch((error) => {
-          document.getElementById("status").innerText = "❌ " + error.message;
+          msg.style.color = "red";
+          msg.innerText = "❌ " + error.message;
         });
-    };
-
-    // Signup Function
-    window.signup = function () {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          document.getElementById("status").innerText = "✅ Signup successful. Please login.";
-        })
-        .catch((error) => {
-          document.getElementById("status").innerText = "❌ " + error.message;
-        });
-    };
+    }
   </script>
 </body>
-</html>
+        </html>
