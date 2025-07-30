@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diplomax Login</title>
+</head>
+<body>
+  <h2>Login to Diplomax</h2>
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+  <button onclick="signup()">Signup</button>
+  <p id="status"></p>
+
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyAxXyOkWXwFsg5RON1MbWdvV8a00USfCDI",
+      authDomain: "diplomax-auth.firebaseapp.com",
+      projectId: "diplomax-auth",
+      storageBucket: "diplomax-auth.firebasestorage.app",
+      messagingSenderId: "1076802833042",
+      appId: "1:1076802833042:web:fd1ae5754cc9cb47e9744b",
+      measurementId: "G-XVFLTZ57EP"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+
+    // Login Function
+    window.login = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          document.getElementById("status").innerText = "❌ " + error.message;
+        });
+    };
+
+    // Signup Function
+    window.signup = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          document.getElementById("status").innerText = "✅ Signup successful. Please login.";
+        })
+        .catch((error) => {
+          document.getElementById("status").innerText = "❌ " + error.message;
+        });
+    };
+  </script>
+</body>
+</html>
