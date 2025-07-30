@@ -1,91 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diplomax Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #2c3e50, #3498db);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
     }
+
     .container {
       background: #ffffff7b;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      padding: 30px;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       width: 100%;
       max-width: 340px;
     }
+
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 1rem;
+      color: #333;
     }
-    input {
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .form-group input {
       width: 100%;
-      padding: 12px;
-      margin: 8px 0;
+      padding: 0.5rem;
+      background:#ffffffca;
       border: 1px solid #ccc;
-      border-radius: 10px;
+      border-radius: 0.5rem;
     }
-    .toggle-password {
+
+    .form-group.password {
       position: relative;
-      cursor: pointer;
-      float: right;
-      margin-top: -30px;
-      margin-right: 10px;
     }
-    button {
+
+    .form-group.password i {
+      position: absolute;
+      right: 10px;
+      top: 38px;
+      cursor: pointer;
+    }
+
+    .btn1 {
       width: 100%;
-      padding: 12px;
-      background-color: #3498db;
-      border: none;
+      padding: 0.7rem;
+      background: #0072ff;
+      margin:1rem;
       color: white;
-      border-radius: 10px;
+      border: none;
+      font-weight:bold;
+      border-radius: 0.5rem;
       cursor: pointer;
-      margin-top: 10px;
     }
-    button:hover {
-      background-color: #2980b9;
+    .btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: #0072ff;
+      margin-top:1rem;
+      color: white;
+      border: none;
+      font-weight:bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
     }
-    .captcha {
-      margin: 10px 0px;
-      
-    }
-    #toggle-form {
+
+    .link {
       text-align: center;
-      margin-top: 15px;
-      color: #3498db;
-      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .link a {
+      color: #0072ff;
+      text-decoration: none;
+    }
+
+    .captcha {
+      margin-top: 1rem;
+    }
+
+    .toggle-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <h2 id="form-title">Login</h2>
-    <input type="text" id="name" placeholder="Full Name" style="display:none">
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <span class="toggle-password" onclick="togglePassword()">🧐</span>
-    <div class="captcha">
-      <label>Captcha: <span id="captcha"></span></label>
-      <input type="text" id="captchaInput" placeholder="Enter captcha">
+    <div class="toggle-container">
+      <button onclick="showLogin()" class="btn1">Login</button>
+      <button onclick="showSignUp()" class="btn1">Sign Up</button>
     </div>
-    <button onclick="handleSubmit()" id="submitBtn">Login</button>
-    <p id="toggle-form" onclick="toggleForm()">Don't have an account? Sign up</p>
+
+    <div id="loginForm">
+      <h2>Login to Diplomax</h2>
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email">
+      </div>
+      <div class="form-group password">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password">
+        <i class="fa fa-eye" onclick="togglePassword('login-password')"></i>
+      </div>
+      <div class="link"><a href="#" onclick="resetPassword()">Forgot Password?</a></div>
+      <button class="btn" onclick="loginUser()">Login</button>
+    </div>
+
+    <div id="signUpForm" style="display:none;">
+      <h2>Sign Up to Diplomax</h2>
+      <div class="form-group">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name">
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email">
+      </div>
+      <div class="form-group password">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password">
+        <i class="fa fa-eye" onclick="togglePassword('signup-password')"></i>
+      </div>
+      <button class="btn" onclick="signUpUser()">Sign Up</button>
+    </div>
   </div>
 
   <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js';
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js';
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyAxXyOkWXwFsg5RON1MbWdvV8a00USfCDI",
@@ -100,56 +169,46 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    let isSignup = false;
+    window.togglePassword = function(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
 
-    window.toggleForm = () => {
-      isSignup = !isSignup;
-      document.getElementById('form-title').innerText = isSignup ? 'Sign Up' : 'Login';
-      document.getElementById('submitBtn').innerText = isSignup ? 'Sign Up' : 'Login';
-      document.getElementById('toggle-form').innerText = isSignup ? 'Already have an account? Login' : "Don't have an account? Sign up";
-      document.getElementById('name').style.display = isSignup ? 'block' : 'none';
-    };
+    window.showLogin = function() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('signUpForm').style.display = 'none';
+    }
 
-    window.togglePassword = () => {
-      const pass = document.getElementById('password');
-      pass.type = pass.type === 'password' ? 'text' : 'password';
-    };
+    window.showSignUp = function() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signUpForm').style.display = 'block';
+    }
 
-    const generateCaptcha = () => {
-      const a = Math.floor(Math.random() * 10);
-      const b = Math.floor(Math.random() * 10);
-      document.getElementById('captcha').innerText = `${a} + ${b}`;
-      return a + b;
-    };
+    window.loginUser = function() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => window.location.href = "https://diplomax-in.github.io/07/")
+        .catch(err => alert(err.message));
+    }
 
-    let captchaResult = generateCaptcha();
+    window.signUpUser = function() {
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => alert("Sign-up successful! Now login."))
+        .catch(err => alert(err.message));
+    }
 
-    window.handleSubmit = async () => {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const inputCaptcha = parseInt(document.getElementById('captchaInput').value);
-
-      if (inputCaptcha !== captchaResult) {
-        alert('Captcha is incorrect');
-        captchaResult = generateCaptcha();
-        return;
-      }
-
-      try {
-        if (isSignup) {
-          const name = document.getElementById('name').value;
-          if (!name) return alert('Please enter your name');
-          await createUserWithEmailAndPassword(auth, email, password);
-          alert('Signup successful!');
-        } else {
-          await signInWithEmailAndPassword(auth, email, password);
-          alert('Welcome! Redirecting...');
-          window.location.href = 'https://diplomax-in.github.io/07/';
-        }
-      } catch (error) {
-        alert(error.message);
-      }
-    };
+    window.resetPassword = function() {
+      const email = prompt("Enter your email for password reset:");
+      if (!email) return;
+      sendPasswordResetEmail(auth, email)
+        .then(() => alert("Password reset email sent!"))
+        .catch(err => alert(err.message));
+    }
   </script>
 </body>
+
 </html>
+
