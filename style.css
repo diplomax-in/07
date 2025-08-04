@@ -215,7 +215,7 @@ input:checked + .slider:before {
 }
 
 .hero {
-  padding: 5px;
+  padding: 10px;
   text-align: center;  
   background-color: #bfeaff;
 }
