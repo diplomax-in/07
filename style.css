@@ -233,6 +233,7 @@ input:checked + .slider:before {
   margin-top: 10px;
   cursor: pointer;
   border-radius: 20px;
+  border-style:ridge;
 
 }
 .section {
@@ -320,6 +321,7 @@ input:checked + .slider:before {
   background: linear-gradient(to right, #007bff, #00c6ff);
   color: white ;
   border: 2px solid black;
+  border-style:ridge;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
