@@ -1,14 +1,5 @@
-// ✅ Chatra Live Chat
-(function(d, w, c) {
-  w.ChatraID = 'butnt9brnBzjzsY5P';
-  var s = d.createElement('script');
-  w[c] = w[c] || function() {
-    (w[c].q = w[c].q || []).push(arguments);
-  };
-  s.async = true;
-  s.src = 'https://call.chatra.io/chatra.js';
-  if (d.head) d.head.appendChild(s);
-})(document, window, 'Chatra');
+//✅ chatbase:-
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="lG4GceU8XZGRAi65J7cjw";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 
 // ✅ Dark Mode Toggle
 const toggle = document.getElementById('modeToggle');
