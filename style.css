@@ -221,7 +221,7 @@ input:checked + .slider:before {
 }
 
 .hero {
-  padding: 35px 35px 10px 35px;
+  padding: 35px 15px 10px 15px;
   text-align: center;
 }
 .btn {
