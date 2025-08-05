@@ -1,4 +1,4 @@
-  
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   padding-top: 70px; /* Equal to header height */
   font-family: Arial, sans-serif;
   background:#bfeaff;
-  
+
 }
 header {
   position: fixed;
@@ -76,7 +76,7 @@ nav ul.active {
 
 
 nav ul li a {
-  
+
   display: block;
   padding: 10px 20px;
   color: white;
@@ -180,7 +180,7 @@ input:checked + .slider:before {
   margin: 10px auto;
   padding: 0px;
   max-width: 100%;
-  
+
 }
 
 /* Bigger text for larger screens */
@@ -313,7 +313,8 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 25px;
+  margin-top: 25px;
+
 }
 
 .social-icons a {
@@ -323,7 +324,7 @@ input:checked + .slider:before {
 }
 
 .social-icons a:hover {
-  color: #fffc6a;
+  color: silver;
 }
 
 }
@@ -393,16 +394,13 @@ body
 }
 
 .whatsapp-float i{
-  background-color:white;
-  font-size:1.8rem;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size:2.5rem;
 }
 
 .like-float {
   position: fixed;
   bottom: 83px;
-  right: 40px;
+  right: 20px;
   background-color: #ff3b3f;
   border-radius: 30px;
   padding: 8px 12px;
