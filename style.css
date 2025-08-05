@@ -307,6 +307,25 @@ input:checked + .slider:before {
   transition: all 1.3s ease;
   opacity: 0;
   transform: translateY(50px);
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color:black;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fffc6a;
+}
+
 }
 .card.show {
   opacity: 1;
@@ -461,23 +480,6 @@ h4 {
 h5 {font-size:15px;
     text-align:center;}
 
-/* Social Icons */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 25px;
-}
-
-.social-icons a {
-  color:black;
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #fffc6a;
-}
 
 .subscribe-box {
   background: white;
