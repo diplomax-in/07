@@ -463,6 +463,16 @@ h4 {
 h5 {font-size:15px;
     text-align:center;}
 
+.link-icons {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  justify-content: center;
+  background-color:black;
+  width: 25px;
+  height: 25px;
+  border:2px solid white;
+}
 .social-icons {
   display: flex;
   gap: 5px;
