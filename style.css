@@ -373,10 +373,9 @@ body
   z-index: 999;
 }
 
-.whatsapp-float img {
+.whatsapp-float i{
   background-color:white;
-  width: 50px;
-  height: 50px;
+  font-size:1.8rem;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -384,7 +383,7 @@ body
 .like-float {
   position: fixed;
   bottom: 83px;
-  right: 20px;
+  right: 40px;
   background-color: #ff3b3f;
   border-radius: 30px;
   padding: 8px 12px;
@@ -394,9 +393,8 @@ body
   cursor: pointer;
 }
 
-.like-float img {
-  width: 24px;
-  height: 24px;
+.like-float i{
+  font-size:1rem;
   margin-right: 8px;
 }
 
