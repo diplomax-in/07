@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy policy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <style>
+   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top:60px; /* Equal to header height */
+  font-family: Arial, sans-serif;
+  background:#bfeaff;
+
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; 
+  background: linear-gradient(to right, #003366, #0059b3);
+  color: white;
+  z-index: 1000;
+  display: flex;
+  padding: 0px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+
+.xlogo{
+    background-color:none;
+    border:none;
+    width:180px;
+    margin-right:1px;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  background: linear-gradient(to right, #003366, #0059b3);
+  display:flex;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: white;
+}
+.navbar{
+    position:fixed;
+    z-index:999;
+    right:-10px;
+    left:-10px;
+    width: 110%;
+}
+nav ul {
+  list-style: none;
+  background: linear-gradient(to right, #003366, #0059b3);
+  flex-direction: column;  
+  display: none;
+  padding: 20px 0;
+}
+
+nav ul.active {
+  display: flex;
+}
+
+
+nav ul li a {
+
+  display: block;
+  padding: 5px 0px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: #003366;
+}
+
+/* Desktop view improvements */
+@media (min-width: 769px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    display: none; 
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+.menu-container {
+  position: relative;
+  padding: 5px;
+}
+
+img{ border-radius:10px;
+     border:1px solid black;
+     position:center;
+}
+.toggle-container {
+      position: fixed;
+      top: 0px;
+      right: 50px;
+      z-index: 1000;
+    }
+
+
+
+main {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color:#f0f4f8;
+}
+h1 {
+  text-align: center;
+  color: #003366;
+    }
+ 
+.share-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+}   
+.branch {
+      display:flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: white;
+      border-left: 6px solid #0066cc;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    }
+.branch h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 5px;
+      margin-top: 20px;
+      
+    }
+    
+    ul {
+      margin: 10px 10px;
+      padding-left: 10px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+
+
+/* Footer Styles */
+
+
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: #003366;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fffc6a;
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-top: 1px solid #555;
+  padding-top: 15px;
+  max-width: 600px;
+  text-align:center;
+  margin: 0 auto;
+  color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    gap: 15px;
+    padding-top:15px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.webp" alt="Diplomax Logo" class="xlogo" />
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </header>
+
+  <nav class="navbar" id="navbar">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
+      <li><a href="jceceb.html"><i class="fas fa-pen"></i> Entrance Exam</a></li>
+      <li><a href="semesters.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+      <li><a href="colleges.html"><i class="fas fa-university"></i> Govt. Colleges</a></li>
+      <li><a href="roadmaps.html"><i class="fas fa-map"></i> Career Roadmaps</a></li>
+      <li><a href="Quiz.html"><i class="fas fa-brain"></i> Quiz Center</a></li>
+      <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login to Diplomax</a></li>
+    </ul>
+  </nav>
+<main>
+     <section class="cards">
+  <h1>Privacy and Security Policy</h1>
+
+  <div class="branch">
+    <p>At <strong>Diplomax</strong>, we take your privacy and security seriously. This page explains how we collect, use, and protect your personal information when you use our website.</p>
+
+  </div>
+
+  <div class="branch">
+   <h2>Information We Collect</h2>
+    <ul>
+      <li>Personal details like name, email address, and contact number during registration or form submissions.</li>
+      <li>Technical data such as browser type, IP address, and operating system.</li>
+      <li>Usage data including pages visited and interaction behavior.</li>
+    </ul>
+  </div>
+
+  <div class="branch">
+    <h2>How We Use Your Information</h2>
+    <ul>
+      <li>To improve website functionality and user experience.</li>
+      <li>To provide personalized services and notifications.</li>
+      <li>To contact you for feedback, updates, and important notices.</li>
+    </ul>
+
+  </div>
+<div class="branch">
+    <h2>Security Measures</h2>
+    <p>We implement the following security practices to protect your data:</p>
+    <ul>
+      <li>HTTPS encryption on all pages.</li>
+      <li>Secure data storage and limited access protocols.</li>
+      <li>Regular software updates and vulnerability assessments.</li>
+    </ul>
+
+  </div>
+<div class="branch">
+    <h2>Cookies</h2>
+    <p>We use cookies to enhance user experience. You can disable cookies through your browser settings, though it may affect some features.</p>
+
+    <h2>Third-Party Sharing</h2>
+    <p>We do not share your personal data with third parties unless required by law or with your explicit consent.</p>
+
+    
+
+  </div>
+<div class="branch">
+    <h2>Contact Us</h2>
+    <p>If you have questions or concerns regarding this policy, please contact us at <a href="mailto:sumitkumar24256ce@gmail.com">support@diplomax</a>.</p>  
+   
+       <s class="social-icons">
+               <a href="https://www.facebook.com/share/g/16NDTQhU8f/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/diplomax01"><i class="fab fa-telegram"></i></a>
+      <a href="https://chat.whatsapp.com/C90OWht67fmJBJmVFCM8gW"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+
+    </s>
+    </div>
+    <button class="share-btn" onclick="sharePage()"><i class="fas fa-share-alt"></i> <b>Share</b></button>
+  <script src="script.js"></script>
+
+   
+  <div class="footer-bottom">
+    <p>&copy; 2025 Diplomax. All rights reserved. Made with <i class="fas fa-heart"></i> by <b>Sumit Kumar Mahato</b></p>
+  </div>
+  </footer>
+
+</body>
+</html>
