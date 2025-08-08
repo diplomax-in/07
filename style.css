@@ -356,7 +356,14 @@ input:checked + .slider:before {
   border: 3px solid #333;
   border-radius: 10px;
 }
-
+.ekcontainer {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+}
 .container {
   max-width: 900px;
   margin: 20px auto;
